@@ -25,18 +25,24 @@ export function About() {
             <h2 className="section-header font-serif text-4xl md:text-5xl font-bold text-navy mb-6">
               About Me
             </h2>
-            <p className="text-neutral-muted text-lg leading-relaxed mb-4">
-              I'm a Master's student in Biomedical Engineering at National Cheng Kung University (NCKU) in Taiwan,
-              pursuing research that bridges deep learning and biological systems.
+            <p className="text-blue-primary text-xl font-semibold mb-4">
+              "Converting microscopy images into biological discovery through interpretable AI"
             </p>
-            <p className="text-neutral-muted text-lg leading-relaxed mb-6">
-              My research focuses on computational imaging, image-based phenotyping, and developing interpretable deep learning
-              models for automated quality assessment in biomedical applications. I'm particularly interested in live-cell tracking,
-              temporal prediction models, and making AI interpretable for scientific discovery.
+            <p className="text-neutral-text text-lg leading-relaxed mb-4">
+              I'm a Master's student in Biomedical Engineering at National Cheng Kung University (NCKU), where I combine
+              <strong> computational imaging, scientific machine learning, and interpretable AI</strong> to understand biological systems at scale.
             </p>
-            <p className="text-neutral-text text-base font-medium">
-              Currently, I'm applying to top PhD programs in Computer Science and AI to continue research that impacts
-              biomedical science and precision medicine.
+            <p className="text-neutral-text text-lg leading-relaxed mb-4">
+              My research tackles three interconnected problems:
+            </p>
+            <ul className="text-neutral-text text-base space-y-2 mb-6 ml-6">
+              <li>✓ <strong>Identity preservation in dense tracking:</strong> Long-term cell tracking with 84.62% accuracy using contrastive learning</li>
+              <li>✓ <strong>Interpretable quality assessment:</strong> Grad-CAM saliency maps for non-destructive biomedical QC</li>
+              <li>✓ <strong>Early prediction:</strong> Forecasting differentiation outcomes from early-stage morphology (96.25% accuracy)</li>
+            </ul>
+            <p className="text-neutral-text text-base">
+              I believe good AI for science is <em>interpretable</em>, <em>reproducible</em>, and <em>domain-aware</em>.
+              I'm applying to top PhD programs to build research that impacts precision medicine and regenerative biology.
             </p>
           </div>
 

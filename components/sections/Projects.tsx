@@ -42,11 +42,11 @@ export function Projects() {
                 </p>
 
                 {/* Key Metrics */}
-                <div className="space-y-2 mb-6">
+                <div className="bg-white border border-neutral-border rounded-lg p-4 mb-6 space-y-2">
                   {Object.entries(project.keyMetrics).map(([key, value]) => (
-                    <div key={key} className="flex justify-between text-sm">
-                      <span className="text-neutral-muted">{key}:</span>
-                      <span className="font-medium text-navy">{value}</span>
+                    <div key={key} className="flex justify-between items-center text-sm">
+                      <span className="text-neutral-muted font-medium">{key}</span>
+                      <span className="font-bold text-blue-primary text-base">{value}</span>
                     </div>
                   ))}
                 </div>

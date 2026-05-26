@@ -39,15 +39,19 @@ export function Hero() {
       >
         {/* Profile Photo */}
         <motion.div variants={itemVariants} className="mb-8">
-          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-primary to-navy rounded-full p-1">
-              <div className="absolute inset-1 bg-white rounded-full flex items-center justify-center">
-                <div className="w-full h-full relative rounded-full overflow-hidden bg-neutral-bg">
-                  {/* Placeholder - user will add their photo */}
-                  <div className="w-full h-full flex items-center justify-center text-6xl">
-                    👩‍🔬
-                  </div>
-                </div>
+          <div className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-6 relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-primary via-navy to-blue-primary rounded-full p-1 animate-pulse"></div>
+            <div className="absolute inset-1 bg-white rounded-full flex items-center justify-center">
+              <div className="w-full h-full relative rounded-full overflow-hidden bg-neutral-bg">
+                <img
+                  src="/photo.png"
+                  alt="Kumari Akanksha"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback if image doesn't exist
+                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center text-6xl">👩‍🔬</div>'
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -63,21 +67,22 @@ export function Hero() {
 
         {/* Tagline with typewriter effect */}
         <motion.div variants={itemVariants} className="mb-8">
-          <p className="text-lg md:text-2xl text-neutral-muted font-light tracking-wide">
-            Computational Imaging · Scientific Machine Learning
+          <p className="text-lg md:text-xl text-blue-primary font-medium tracking-wide mb-2">
+            Building Interpretable AI for Biology
           </p>
-          <p className="text-lg md:text-2xl text-blue-primary font-medium mt-2">
-            Deep Learning for Biomedical Research
+          <p className="text-lg md:text-2xl text-neutral-muted font-light tracking-wide">
+            Transforming microscopy images into biological insights through deep learning
           </p>
         </motion.div>
 
         {/* Short Bio */}
         <motion.p
           variants={itemVariants}
-          className="text-neutral-muted text-center max-w-2xl mx-auto mb-10 text-lg leading-relaxed"
+          className="text-neutral-muted text-center max-w-3xl mx-auto mb-10 text-lg leading-relaxed"
         >
-          Master's student at NCKU applying to top PhD programs in Computer Science and AI for Biomedical Research.
-          Passionate about computational microscopy, image analysis, and interpretable deep learning.
+          I combine computational imaging, scientific machine learning, and interpretable AI to unlock patterns in biological systems.
+          My research focuses on automated quality assessment, live-cell tracking, and early-stage phenotype prediction—
+          enabling faster discovery in cell biology and regenerative medicine.
         </motion.p>
 
         {/* Social Links */}
