@@ -1,0 +1,20 @@
+[build]
+  command = "npm run build"
+  functions = "netlify/functions"
+  publish = ".next"
+
+[[redirects]]
+  from = "/*"
+  to = "/.next/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[functions]
+  node_bundler = "esbuild"
+
+[env]
+  Node = "18.17.0"
