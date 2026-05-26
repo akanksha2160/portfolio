@@ -1,8 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react'
+import { Github, Linkedin, Mail, ChevronDown, GraduationCap } from 'lucide-react'
 import { PERSONAL_INFO } from '@/lib/data'
+import { CellTrackingBackground } from './CellTrackingBackground'
 
 export function Hero() {
   const containerVariants = {
@@ -10,7 +11,7 @@ export function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.18,
         delayChildren: 0.3,
       },
     },
@@ -26,32 +27,46 @@ export function Hero() {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-neutral-bg via-white to-neutral-bg relative overflow-hidden py-20 md:py-0">
-      {/* Decorative background elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-light/20 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-blue-light/10 rounded-full blur-3xl -z-10" />
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden py-20 md:py-0 bg-neutral-bg">
+      {/* Interactive cell-tracking animation */}
+      <CellTrackingBackground />
+
+      {/* Readability overlay - radial vignette keeps center text crisp */}
+      <div className="absolute inset-0 bg-gradient-radial pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse at center, rgba(248,250,252,0.82) 0%, rgba(248,250,252,0.5) 45%, rgba(248,250,252,0.15) 100%)' }}
+      />
 
       <motion.div
-        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
+        {/* Research focus badge */}
+        <motion.div variants={itemVariants} className="mb-6 flex justify-center">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-md border border-cyan/40 text-sm font-medium text-navy shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
+            Computational Imaging · Deep Learning for Biology
+          </span>
+        </motion.div>
+
         {/* Profile Photo */}
         <motion.div variants={itemVariants} className="mb-8">
-          <div className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-6 relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-primary via-navy to-blue-primary rounded-full p-1 animate-pulse"></div>
-            <div className="absolute inset-1 bg-white rounded-full flex items-center justify-center">
-              <div className="w-full h-full relative rounded-full overflow-hidden bg-neutral-bg">
-                <img
-                  src="/photo.png"
-                  alt="Kumari Akanksha"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    // Fallback if image doesn't exist
-                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center text-6xl">👩‍🔬</div>'
-                  }}
-                />
+          <div className="w-40 h-40 md:w-48 md:h-48 mx-auto relative group">
+            {/* Animated glow ring */}
+            <div className="absolute -inset-1 bg-gradient-to-tr from-blue-electric via-cyan-glow to-teal rounded-full blur-md opacity-70 animate-glow-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-electric via-cyan-glow to-teal rounded-full p-[3px]">
+              <div className="w-full h-full bg-white rounded-full p-1">
+                <div className="w-full h-full relative rounded-full overflow-hidden bg-neutral-bg">
+                  <img
+                    src="/photo.png"
+                    alt="Kumari Akanksha"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center text-6xl">👩‍🔬</div>'
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -60,67 +75,65 @@ export function Hero() {
         {/* Name */}
         <motion.h1
           variants={itemVariants}
-          className="font-serif text-5xl md:text-7xl font-bold text-navy mb-4"
+          className="font-serif text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-navy via-blue-primary to-cyan bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x leading-tight pb-2"
         >
           {PERSONAL_INFO.name}
         </motion.h1>
 
-        {/* Tagline with typewriter effect */}
+        {/* Tagline */}
         <motion.div variants={itemVariants} className="mb-8">
-          <p className="text-lg md:text-xl text-blue-primary font-medium tracking-wide mb-2">
+          <p className="text-xl md:text-3xl font-serif font-bold text-navy mb-3">
             Building Interpretable AI for Biology
           </p>
-          <p className="text-lg md:text-2xl text-neutral-muted font-light tracking-wide">
-            Transforming microscopy images into biological insights through deep learning
+          <p className="text-base md:text-xl text-neutral-muted font-light tracking-wide max-w-2xl mx-auto">
+            Turning microscopy images into biological discovery through deep learning
           </p>
         </motion.div>
 
         {/* Short Bio */}
         <motion.p
           variants={itemVariants}
-          className="text-neutral-muted text-center max-w-3xl mx-auto mb-10 text-lg leading-relaxed"
+          className="text-neutral-text text-center max-w-3xl mx-auto mb-10 text-base md:text-lg leading-relaxed"
         >
-          I combine computational imaging, scientific machine learning, and interpretable AI to unlock patterns in biological systems.
-          My research focuses on automated quality assessment, live-cell tracking, and early-stage phenotype prediction—
-          enabling faster discovery in cell biology and regenerative medicine.
+          I combine computational imaging, scientific machine learning, and interpretable AI to unlock patterns in
+          biological systems—from live-cell tracking to early-stage phenotype prediction, enabling faster discovery
+          in cell biology and regenerative medicine.
         </motion.p>
 
         {/* Social Links */}
-        <motion.div variants={itemVariants} className="flex justify-center gap-6 mb-12">
-          <a
-            href={PERSONAL_INFO.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 bg-white rounded-full border border-neutral-border hover:border-blue-primary hover:bg-blue-light/10 transition-all duration-300 hover:shadow-lg"
-            title="GitHub"
-          >
-            <Github size={24} className="text-navy hover:text-blue-primary" />
-          </a>
-          <a
-            href={PERSONAL_INFO.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 bg-white rounded-full border border-neutral-border hover:border-blue-primary hover:bg-blue-light/10 transition-all duration-300 hover:shadow-lg"
-            title="LinkedIn"
-          >
-            <Linkedin size={24} className="text-navy hover:text-blue-primary" />
-          </a>
-          <a
-            href={`mailto:${PERSONAL_INFO.email}`}
-            className="p-3 bg-white rounded-full border border-neutral-border hover:border-blue-primary hover:bg-blue-light/10 transition-all duration-300 hover:shadow-lg"
-            title="Email"
-          >
-            <Mail size={24} className="text-navy hover:text-blue-primary" />
-          </a>
+        <motion.div variants={itemVariants} className="flex justify-center gap-4 mb-10">
+          {[
+            { href: PERSONAL_INFO.github, Icon: Github, label: 'GitHub' },
+            { href: PERSONAL_INFO.linkedin, Icon: Linkedin, label: 'LinkedIn' },
+            { href: PERSONAL_INFO.googleScholar, Icon: GraduationCap, label: 'Google Scholar' },
+            { href: `mailto:${PERSONAL_INFO.email}`, Icon: Mail, label: 'Email' },
+          ].map(({ href, Icon, label }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith('http') ? '_blank' : undefined}
+              rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="p-3 bg-white/80 backdrop-blur-md rounded-xl border border-neutral-border hover:border-cyan hover:bg-white hover:scale-110 hover:shadow-lg hover:shadow-cyan/20 transition-all duration-300 group"
+              title={label}
+            >
+              <Icon size={22} className="text-navy group-hover:text-blue-primary transition-colors" />
+            </a>
+          ))}
         </motion.div>
 
-        {/* CTA Button */}
-        <motion.div variants={itemVariants}>
+        {/* CTA Buttons */}
+        <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4">
           <a
-            href="#about"
-            className="inline-block bg-blue-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300"
+            href="#projects"
+            className="inline-block bg-gradient-to-r from-blue-primary to-cyan text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-primary/30 hover:-translate-y-0.5 transition-all duration-300"
           >
-            Explore My Work
+            View Research
+          </a>
+          <a
+            href="#contact"
+            className="inline-block bg-white/80 backdrop-blur-md text-navy border border-neutral-border px-8 py-3 rounded-xl font-semibold hover:border-cyan hover:-translate-y-0.5 transition-all duration-300"
+          >
+            Get in Touch
           </a>
         </motion.div>
       </motion.div>
@@ -129,9 +142,9 @@ export function Hero() {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
-        <ChevronDown className="text-neutral-muted" size={32} />
+        <ChevronDown className="text-blue-primary" size={32} />
       </motion.div>
     </section>
   )

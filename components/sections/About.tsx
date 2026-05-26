@@ -55,12 +55,12 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-neutral-bg p-6 rounded-xl border border-neutral-border hover:border-blue-primary transition-colors"
+                className="bg-neutral-bg p-6 rounded-xl border border-neutral-border card-glow"
               >
                 <p className="text-neutral-muted text-sm font-semibold uppercase tracking-wider mb-2">
                   {stat.label}
                 </p>
-                <p className="font-serif text-4xl font-bold text-navy">
+                <p className="font-serif text-4xl font-bold bg-gradient-to-br from-navy to-cyan bg-clip-text text-transparent">
                   {stat.value}
                 </p>
               </motion.div>

@@ -17,7 +17,7 @@ export default function ProjectsPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-blue-primary hover:text-blue-600 font-medium mb-8"
+            className="inline-flex items-center gap-2 text-blue-primary hover:text-navy font-medium mb-8"
           >
             <ArrowLeft size={16} />
             Back to Projects

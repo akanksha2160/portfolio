@@ -8,7 +8,13 @@
       "PowerShell(git config *)",
       "PowerShell(git *)",
       "WebFetch(domain:www.saranshsaini.in)",
-      "WebFetch(domain:mamta-portfolio.onrender.com)"
+      "WebFetch(domain:mamta-portfolio.onrender.com)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); cd \"C:\\\\Users\\\\p8614\\\\OneDrive\\\\Desktop\\\\PORTIFOLIO WEBSITE\"; git log --oneline -5)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); cd \"C:\\\\Users\\\\p8614\\\\OneDrive\\\\Desktop\\\\PORTIFOLIO WEBSITE\"; git log origin/main --oneline -3)",
+      "WebFetch(domain:gentle-beignet-a50f37.netlify.app)",
+      "PowerShell(Copy-Item *)",
+      "PowerShell(New-Item *)",
+      "WebSearch"
     ]
   }
 }

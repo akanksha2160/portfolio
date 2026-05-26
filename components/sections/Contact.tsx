@@ -127,7 +127,7 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-blue-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300"
+                className="w-full bg-gradient-to-r from-blue-primary to-cyan text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-primary/30 transition-all duration-300"
               >
                 Send Message
               </button>

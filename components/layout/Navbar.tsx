@@ -23,7 +23,7 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="font-serif text-xl font-bold text-navy hover:text-blue-primary">
+          <Link href="/" className="font-serif text-xl font-bold bg-gradient-to-r from-navy to-blue-primary bg-clip-text text-transparent hover:from-blue-primary hover:to-cyan transition-all">
             Kumari Akanksha
           </Link>
 
@@ -45,7 +45,7 @@ export function Navbar() {
             <a
               href={CV_URL}
               download
-              className="flex items-center gap-2 bg-blue-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 font-medium"
+              className="flex items-center gap-2 bg-gradient-to-r from-blue-primary to-cyan text-white px-4 py-2 rounded-lg hover:shadow-lg hover:shadow-blue-primary/30 font-medium transition-all"
             >
               <Download size={16} />
               CV
@@ -77,7 +77,7 @@ export function Navbar() {
             <a
               href={CV_URL}
               download
-              className="flex items-center gap-2 bg-blue-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 font-medium mt-4 w-full justify-center"
+              className="flex items-center gap-2 bg-blue-primary text-white px-4 py-2 rounded-lg hover:bg-navy font-medium mt-4 w-full justify-center"
             >
               <Download size={16} />
               Download CV

@@ -51,7 +51,7 @@ button, a {
 
 /* Text gradient */
 .gradient-text {
-  @apply bg-gradient-to-r from-navy to-blue-primary bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-navy via-blue-primary to-cyan bg-clip-text text-transparent;
 }
 
 /* Code block styling */
@@ -83,11 +83,26 @@ a {
 
 /* Section headers */
 .section-header {
-  @apply relative pb-8 border-b border-neutral-border;
+  @apply relative pb-8 mb-2;
+}
+
+/* Animated gradient accent bar under section headings */
+.section-header::after {
+  content: '';
+  @apply absolute bottom-0 left-0 h-1 w-20 rounded-full bg-gradient-to-r from-blue-primary to-cyan;
 }
 
 .section-header h2 {
   @apply font-serif text-4xl md:text-5xl font-bold text-navy;
+}
+
+/* Card glow on hover */
+.card-glow {
+  @apply transition-all duration-300;
+}
+
+.card-glow:hover {
+  @apply shadow-lg shadow-cyan/10 border-cyan -translate-y-1;
 }
 
 /* Timeline */

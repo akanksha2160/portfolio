@@ -37,7 +37,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 text-blue-primary hover:text-blue-600 font-medium mb-6"
+              className="inline-flex items-center gap-2 text-blue-primary hover:text-navy font-medium mb-6"
             >
               <ArrowLeft size={16} />
               Back to Projects
@@ -141,7 +141,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               </p>
               <a
                 href="#contact"
-                className="inline-block bg-blue-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors"
+                className="inline-block bg-gradient-to-r from-blue-primary to-cyan text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-primary/30 transition-all"
               >
                 Get in Touch
               </a>
