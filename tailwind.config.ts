@@ -8,27 +8,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: '#0F1B33',
-        'navy-light': '#1B2A4A',
+        // Forest Bio palette — semantic names kept stable; values are emerald/sage
+        navy: '#1B4332',          // deep emerald (headings, dark sections)
+        'navy-light': '#2D5A45',
         blue: {
-          primary: '#2563EB',
-          electric: '#3B82F6',
-          light: '#DBEAFE',
+          primary: '#2D6A4F',     // rich green (links, buttons, accents)
+          electric: '#40916C',
+          light: '#D8F3DC',       // light sage tint (badges, backgrounds)
         },
         cyan: {
-          DEFAULT: '#06B6D4',
-          light: '#CFFAFE',
-          glow: '#22D3EE',
+          DEFAULT: '#52B788',     // sage accent
+          light: '#D8F3DC',
+          glow: '#74C69D',
         },
         teal: {
-          DEFAULT: '#14B8A6',
+          DEFAULT: '#40916C',
         },
         neutral: {
-          bg: '#F8FAFC',
+          bg: '#F7F9F4',          // warm off-white
           surface: '#FFFFFF',
-          text: '#111827',
-          muted: '#6B7280',
-          border: '#E2E8F0',
+          text: '#1A1A1A',        // near-black
+          muted: '#5A7060',       // readable muted green
+          border: '#E3EAE1',      // green-tinted border
         },
       },
       fontFamily: {

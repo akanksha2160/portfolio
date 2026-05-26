@@ -33,7 +33,7 @@ export function Hero() {
 
       {/* Readability overlay - radial vignette keeps center text crisp */}
       <div className="absolute inset-0 bg-gradient-radial pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at center, rgba(248,250,252,0.82) 0%, rgba(248,250,252,0.5) 45%, rgba(248,250,252,0.15) 100%)' }}
+        style={{ background: 'radial-gradient(ellipse at center, rgba(247,249,244,0.82) 0%, rgba(247,249,244,0.5) 45%, rgba(247,249,244,0.15) 100%)' }}
       />
 
       <motion.div

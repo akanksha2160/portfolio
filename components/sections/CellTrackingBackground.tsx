@@ -33,12 +33,12 @@ export function CellTrackingBackground() {
     let animationId = 0
     let nextId = 1
 
-    // Color palette echoing fluorescence microscopy channels
+    // Forest Bio palette — emerald/sage cell channels
     const palette = [
-      { r: 59, g: 130, b: 246 },   // electric blue (DAPI-ish)
-      { r: 34, g: 211, b: 238 },   // cyan (microtubules)
-      { r: 20, g: 184, b: 166 },   // teal
-      { r: 99, g: 102, b: 241 },   // indigo
+      { r: 45, g: 106, b: 79 },    // rich green
+      { r: 82, g: 183, b: 136 },   // sage
+      { r: 116, g: 198, b: 157 },  // light sage
+      { r: 64, g: 145, b: 108 },   // forest
     ]
 
     function resize() {
