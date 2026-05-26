@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-neutral-bg text-neutral-text;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-navy rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-navy-light;
+}
+
+/* Section padding */
+.section {
+  @apply py-20 md:py-32;
+}
+
+/* Smooth transitions */
+button, a {
+  @apply transition-colors duration-300;
+}
+
+/* Glow effect for images */
+.glow-border {
+  @apply ring-2 ring-blue-primary ring-opacity-30;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Text gradient */
+.gradient-text {
+  @apply bg-gradient-to-r from-navy to-blue-primary bg-clip-text text-transparent;
+}
+
+/* Code block styling */
+code {
+  @apply font-mono text-sm bg-neutral-bg px-2 py-1 rounded;
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-info {
+  @apply bg-blue-light text-blue-primary;
+}
+
+/* Link styles */
+a {
+  @apply text-blue-primary hover:text-navy transition-colors;
+}
+
+/* Section headers */
+.section-header {
+  @apply relative pb-8 border-b border-neutral-border;
+}
+
+.section-header h2 {
+  @apply font-serif text-4xl md:text-5xl font-bold text-navy;
+}
+
+/* Timeline */
+.timeline-item {
+  @apply relative pl-8 pb-12;
+}
+
+.timeline-item::before {
+  @apply absolute left-0 top-0 w-3 h-3 bg-blue-primary rounded-full;
+  content: '';
+}
+
+.timeline-item::after {
+  @apply absolute left-1 top-3 bottom-0 w-0.5 bg-neutral-border;
+  content: '';
+}
+
+.timeline-item:last-child::after {
+  @apply hidden;
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  @apply animate-fade-in-up;
+}
