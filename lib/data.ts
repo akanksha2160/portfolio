@@ -58,11 +58,6 @@ export const EXPERIENCE = [
         description: 'Deep learning framework for automated NK-cell maturation assessment from Day-10 bright-field EB images; domain-specific preprocessing (Otsu-based ROI, circular soft masking), imbalance-aware training (class-weighted loss, Mixup, label smoothing), and stratified group 5-fold cross-validation. ResNet-18 achieves 96.25% accuracy (AUC: 0.99), with t-SNE confirming discriminative morphological representations. First-author paper, IEEE CBMS 2026 (accepted).',
         metrics: ['96.25% accuracy', 'AUC: 0.99', '1st author @ IEEE CBMS 2026'],
       },
-      {
-        title: 'Research infrastructure',
-        description: 'Modular PyTorch pipelines with deterministic seeding, configuration management, and experiment tracking; shared as reusable research infrastructure across Tu Lab projects.',
-        metrics: [],
-      },
     ],
   },
   {
@@ -85,20 +80,22 @@ export const EXPERIENCE = [
       },
     ],
   },
+]
+
+export const TECHNICAL_EXPERIENCE = [
   {
-    title: 'Research Intern — IIPP Fellowship',
-    organization: 'National Yang Ming Chiao Tung University',
-    location: 'Hsinchu, Taiwan',
-    advisor: 'Prof. Ray-Hua Horng',
-    startDate: 'Jan 2024',
-    endDate: 'Mar 2024',
-    bullets: [
-      {
-        title: 'Surrogate ML modeling for scientific instruments',
-        description: 'Feature-engineered regression pipeline for semiconductor growth-parameter prediction (FWHM; R² = 0.80) via cross-validated model selection; demonstrates scientific ML applied to physical measurement systems. Selected from ∼600 nationwide applicants (NTD 30,000/month stipend).',
-        metrics: ['R² = 0.80', 'Selected from ~600 applicants'],
-      },
-    ],
+    title: 'Research infrastructure & reproducible ML',
+    organization: 'Tu Lab, National Cheng Kung University',
+    period: 'Feb 2025 – Present',
+    description: 'Modular PyTorch pipelines with deterministic seeding, configuration management and experiment tracking, shared as reusable research infrastructure across Tu Lab projects.',
+    tags: ['PyTorch', 'Reproducibility', 'Experiment tracking'],
+  },
+  {
+    title: 'Surrogate ML modeling for scientific instruments',
+    organization: 'National Yang Ming Chiao Tung University · IIPP Fellowship',
+    period: 'Jan 2024 – Mar 2024',
+    description: 'Feature-engineered regression pipeline for semiconductor growth-parameter prediction (FWHM; R² = 0.80) with cross-validated model selection, applying scientific ML to a physical measurement system under Prof. Ray-Hua Horng. Selected from ~600 nationwide applicants.',
+    tags: ['Regression', 'Feature engineering', 'Cross-validation', 'R² = 0.80'],
   },
 ]
 

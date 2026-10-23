@@ -23,7 +23,7 @@ export default function ProjectsPage() {
             Back to Projects
           </Link>
 
-          <h1 className="font-serif text-5xl font-bold text-navy mb-12">
+          <h1 className="text-5xl font-bold text-navy mb-12">
             Research Projects
           </h1>
 
@@ -37,7 +37,7 @@ export default function ProjectsPage() {
                 <span className="text-xs font-semibold text-blue-primary uppercase tracking-wider mb-4 block">
                   {project.status}
                 </span>
-                <h2 className="font-serif text-2xl font-bold text-navy mb-3 hover:text-blue-primary transition-colors">
+                <h2 className="text-2xl font-bold text-navy mb-3 hover:text-blue-primary transition-colors">
                   {project.title}
                 </h2>
                 <p className="text-neutral-muted text-base mb-6">

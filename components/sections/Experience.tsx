@@ -17,7 +17,7 @@ export function Experience() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-header font-serif text-4xl md:text-5xl font-bold text-navy mb-12">
+          <h2 className="section-header text-4xl md:text-5xl font-bold text-navy mb-12">
             Research Experience
           </h2>
 
@@ -36,7 +36,7 @@ export function Experience() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
-                      <h3 className="font-serif text-2xl font-bold text-navy mb-2">
+                      <h3 className="text-2xl font-bold text-navy mb-2">
                         {job.title}
                       </h3>
                       <p className="text-blue-primary font-semibold mb-1.5">

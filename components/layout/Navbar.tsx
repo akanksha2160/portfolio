@@ -12,6 +12,7 @@ export function Navbar() {
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#projects' },
     { label: 'Experience', href: '#experience' },
+    { label: 'Technical', href: '#technical' },
     { label: 'Publications', href: '#publications' },
     { label: 'Skills', href: '#skills' },
     { label: 'Contact', href: '#contact' },

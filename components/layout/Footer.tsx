@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* About */}
           <div>
-            <h3 className="font-serif text-2xl font-bold text-navy mb-2">{PERSONAL_INFO.name}</h3>
+            <h3 className="text-2xl font-bold text-navy mb-2">{PERSONAL_INFO.name}</h3>
             <p className="text-neutral-muted text-sm leading-relaxed">{PERSONAL_INFO.title}</p>
           </div>
 

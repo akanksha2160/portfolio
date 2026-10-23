@@ -15,8 +15,8 @@ export function Projects() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-header font-serif text-4xl md:text-5xl font-bold text-navy mb-12">
-            Featured Research Projects
+          <h2 className="section-header text-4xl md:text-5xl font-bold text-navy mb-12">
+            Research Projects
           </h2>
 
           {/* Bento layout: first project featured (full width), rest in a 2-col mosaic */}
@@ -33,15 +33,15 @@ export function Projects() {
                   className={`bento-card flex flex-col ${featured ? 'md:col-span-2' : ''}`}
                 >
                   <div className="mb-4 flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-accent-coral" />
-                    <span className="text-xs font-semibold text-accent-coral uppercase tracking-wide">
+                    <span className="w-2.5 h-2.5 rounded-full bg-cyan-primary" />
+                    <span className="text-xs font-semibold text-cyan-primary uppercase tracking-wide">
                       {project.status.split(' - ')[0]}
                     </span>
                   </div>
 
                   <div className={featured ? 'md:flex md:gap-8 md:items-start' : ''}>
                     <div className={featured ? 'md:flex-1' : ''}>
-                      <h3 className={`font-serif font-bold text-navy mb-4 ${featured ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
+                      <h3 className={`font-bold text-navy mb-4 ${featured ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
                         {project.title}
                       </h3>
                       <p className="text-neutral-muted text-sm mb-5 leading-relaxed">

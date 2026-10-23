@@ -21,7 +21,7 @@ export function Contact() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-header font-serif text-4xl md:text-5xl font-bold text-navy mb-12">
+          <h2 className="section-header text-4xl md:text-5xl font-bold text-navy mb-12">
             Get In Touch
           </h2>
 
@@ -33,7 +33,7 @@ export function Contact() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="font-serif text-2xl font-bold text-navy mb-8">
+              <h3 className="text-2xl font-bold text-navy mb-8">
                 Contact Information
               </h3>
 
@@ -79,7 +79,7 @@ export function Contact() {
               onSubmit={handleSubmit}
               className="space-y-4"
             >
-              <h3 className="font-serif text-2xl font-bold text-navy mb-8">
+              <h3 className="text-2xl font-bold text-navy mb-8">
                 Send a Message
               </h3>
 

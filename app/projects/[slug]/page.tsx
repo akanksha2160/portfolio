@@ -43,7 +43,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               Back to Projects
             </Link>
 
-            <h1 className="font-serif text-5xl font-bold text-navy mb-4">
+            <h1 className="text-5xl font-bold text-navy mb-4">
               {project.title}
             </h1>
             <p className="text-neutral-muted text-lg mb-6">
@@ -71,7 +71,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             {/* Overview */}
             <div>
-              <h2 className="font-serif text-3xl font-bold text-navy mb-4">
+              <h2 className="text-3xl font-bold text-navy mb-4">
                 Overview
               </h2>
               <p className="text-neutral-muted text-lg leading-relaxed">
@@ -81,7 +81,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
             {/* Key Metrics */}
             <div>
-              <h2 className="font-serif text-3xl font-bold text-navy mb-6">
+              <h2 className="text-3xl font-bold text-navy mb-6">
                 Key Results
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
@@ -93,7 +93,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                     <p className="text-neutral-muted text-sm font-semibold uppercase tracking-wider mb-2">
                       {key}
                     </p>
-                    <p className="font-serif text-3xl font-bold bg-gradient-to-br from-navy to-cyan-primary bg-clip-text text-transparent">
+                    <p className="text-3xl font-bold bg-gradient-to-br from-navy to-cyan-primary bg-clip-text text-transparent">
                       {value}
                     </p>
                   </div>
@@ -103,7 +103,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
             {/* Methodology */}
             <div>
-              <h2 className="font-serif text-3xl font-bold text-navy mb-4">
+              <h2 className="text-3xl font-bold text-navy mb-4">
                 Methodology
               </h2>
               <p className="text-neutral-muted text-lg leading-relaxed">
@@ -113,7 +113,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
             {/* Dataset */}
             <div>
-              <h2 className="font-serif text-3xl font-bold text-navy mb-4">
+              <h2 className="text-3xl font-bold text-navy mb-4">
                 Dataset & Experimental Setup
               </h2>
               <p className="text-neutral-muted text-lg leading-relaxed">
@@ -123,7 +123,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
             {/* Results */}
             <div>
-              <h2 className="font-serif text-3xl font-bold text-navy mb-4">
+              <h2 className="text-3xl font-bold text-navy mb-4">
                 Results & Analysis
               </h2>
               <p className="text-neutral-muted text-lg leading-relaxed">
@@ -133,7 +133,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
             {/* Call to Action */}
             <div className="bg-blue-light border border-blue-primary p-8 rounded-xl">
-              <h3 className="font-serif text-2xl font-bold text-navy mb-4">
+              <h3 className="text-2xl font-bold text-navy mb-4">
                 Interested in this research?
               </h3>
               <p className="text-neutral-muted mb-6">

@@ -22,7 +22,7 @@ export function Publications() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-header font-serif text-4xl md:text-5xl font-bold text-navy mb-12">
+          <h2 className="section-header text-4xl md:text-5xl font-bold text-navy mb-12">
             Publications & Presentations
           </h2>
 

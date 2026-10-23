@@ -13,7 +13,7 @@ export function Skills() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-header font-serif text-4xl md:text-5xl font-bold text-navy mb-12">
+          <h2 className="section-header text-4xl md:text-5xl font-bold text-navy mb-12">
             Technical Skills
           </h2>
 
@@ -29,7 +29,7 @@ export function Skills() {
               >
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-3xl">{icon}</span>
-                  <h3 className="font-serif text-xl font-bold text-navy">
+                  <h3 className="text-xl font-bold text-navy">
                     {category}
                   </h3>
                 </div>
