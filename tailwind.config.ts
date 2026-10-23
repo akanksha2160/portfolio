@@ -8,36 +8,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Advanced Dark Mode — Biomedical Research Aesthetic
-        navy: '#0A0E27',          // deep navy-black
-        'navy-light': '#1A1F3A',  // softer navy
-        cyan: {
-          primary: '#00D9FF',     // vibrant cyan (cell imaging)
-          light: '#1a3f47',       // dark cyan tint
-          glow: '#00F0FF',        // bright cyan glow
-        },
-        blue: {
-          primary: '#0099FF',     // electric blue
-          electric: '#00D9FF',    // bright electric cyan
-          light: '#1a3f47',       // dark blue-tint
-          dark: '#001a4d',        // deep dark blue
-        },
-        green: {
-          primary: '#00CC88',     // bio green (life/growth)
-          accent: '#00FF88',      // bright bio green
-          light: '#1a4d33',       // dark green tint
-        },
-        accent: {
-          purple: '#9D4EDD',      // research purple
-          pink: '#FF006E',        // data visualization pink
-        },
+        navy: '#111827',
+        'navy-light': '#1F2937',
+        cyan: { primary: '#0F766E', light: '#E6F4F1', glow: '#115E59' },
+        blue: { primary: '#0F766E', electric: '#0F766E', light: '#E6F4F1', dark: '#134E4A' },
+        green: { primary: '#0F766E', accent: '#14B8A6', light: '#E6F4F1' },
         neutral: {
-          bg: '#050812',          // nearly black bg
-          surface: '#0F1629',     // card surface
-          'surface-2': '#141E2E', // raised tile
-          text: '#E0E8FF',        // cool off-white text
-          muted: '#8B95B3',       // muted cool gray
-          border: '#1a2441',      // subtle border
+          bg: '#FAFAF9',
+          surface: '#FFFFFF',
+          'surface-2': '#F3F4F2',
+          text: '#111827',
+          muted: '#6B7280',
+          border: '#E5E7EB',
         },
       },
       fontFamily: {

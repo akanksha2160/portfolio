@@ -9,11 +9,7 @@ html {
 }
 
 body {
-  @apply bg-neutral-bg text-neutral-text font-sans;
-  font-feature-settings: "liga" 1, "calt" 1;
-  background: radial-gradient(ellipse at 20% 50%, rgba(0, 217, 255, 0.05) 0%, transparent 50%),
-              radial-gradient(ellipse at 80% 80%, rgba(0, 204, 136, 0.03) 0%, transparent 50%),
-              #050812;
+  @apply bg-neutral-bg text-neutral-text font-sans antialiased;
 }
 
 /* Custom scrollbar */
@@ -86,24 +82,11 @@ code {
 }
 
 .bento-card {
-  @apply relative rounded-2xl border border-neutral-border bg-neutral-surface p-6 overflow-hidden transition-all duration-500;
-  background: linear-gradient(135deg, rgba(15, 22, 41, 0.8), rgba(20, 30, 46, 0.6));
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 217, 255, 0.08), inset 0 1px 0 rgba(0, 217, 255, 0.2);
+  @apply relative rounded-2xl border border-neutral-border bg-neutral-surface p-6 transition-all duration-300;
 }
 
 .bento-card:hover {
-  @apply border-cyan-primary/50 -translate-y-1;
-  box-shadow: 0 20px 60px rgba(0, 217, 255, 0.25), inset 0 1px 0 rgba(0, 217, 255, 0.3);
-  background: linear-gradient(135deg, rgba(15, 22, 41, 1), rgba(20, 30, 46, 0.8));
-}
-
-/* glowing top accent line */
-.bento-card::before {
-  content: '';
-  @apply absolute inset-x-0 top-0 h-px;
-  background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.6), transparent);
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+  @apply border-cyan-primary/40 -translate-y-0.5 shadow-md;
 }
 
 /* glass tile (for over-animation areas) */
@@ -124,8 +107,7 @@ a {
 /* Glowing accent line under section headings */
 .section-header::after {
   content: '';
-  @apply absolute bottom-0 left-0 h-1 w-32 rounded-full bg-gradient-to-r from-cyan-primary to-green-primary;
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+  @apply absolute bottom-0 left-0 h-0.5 w-16 rounded-full bg-cyan-primary;
 }
 
 .section-header h2 {

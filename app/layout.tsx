@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://akanksha2160.github.io/portfolio'),
   title: 'Kumari Akanksha | Computational Imaging & Deep Learning for Biomedical Research',
-  description: 'Master\'s student in Biomedical Engineering at NCKU. Research in computational microscopy, deep learning, and image-based phenotyping. PhD applicant to MIT, Stanford, CMU.',
+  description: 'Master\'s student in Biomedical Engineering at NCKU. Research in computational microscopy, deep learning, and image-based phenotyping.',
   keywords: ['Computational Imaging', 'Deep Learning', 'Biomedical Engineering', 'Scientific Machine Learning', 'Biological Image Analysis'],
   authors: [{ name: 'Kumari Akanksha' }],
   openGraph: {

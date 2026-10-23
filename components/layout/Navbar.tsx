@@ -10,16 +10,15 @@ export function Navbar() {
 
   const navLinks = [
     { label: 'About', href: '#about' },
-    { label: 'Research', href: '#research' },
+    { label: 'Projects', href: '#projects' },
     { label: 'Experience', href: '#experience' },
     { label: 'Publications', href: '#publications' },
-    { label: 'Projects', href: '#projects' },
     { label: 'Skills', href: '#skills' },
     { label: 'Contact', href: '#contact' },
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-neutral-bg/80 backdrop-blur-xl border-b border-neutral-border/30">
+    <nav className="sticky top-0 z-50 bg-neutral-bg/80 backdrop-blur-xl border-b border-neutral-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -45,7 +44,7 @@ export function Navbar() {
             <a
               href={CV_URL}
               download
-              className="flex items-center gap-2 bg-gradient-to-r from-cyan-primary to-blue-primary text-neutral-bg px-4 py-2 rounded-lg hover:shadow-lg hover:shadow-cyan-primary/40 hover:-translate-y-0.5 font-bold transition-all"
+              className="flex items-center gap-2 border border-neutral-text text-neutral-text px-4 py-2 rounded-lg hover:bg-neutral-text hover:text-neutral-bg font-medium text-sm transition-all"
             >
               <Download size={16} />
               CV
@@ -77,7 +76,7 @@ export function Navbar() {
             <a
               href={CV_URL}
               download
-              className="flex items-center gap-2 bg-blue-primary text-white px-4 py-2 rounded-lg hover:bg-navy font-medium mt-4 w-full justify-center"
+              className="flex items-center gap-2 border border-neutral-text text-neutral-text px-4 py-2 rounded-lg font-medium mt-4 w-full justify-center"
             >
               <Download size={16} />
               Download CV
