@@ -31,9 +31,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-neutral-bg">
         {/* Header */}
-        <section className="bg-gradient-to-b from-neutral-bg to-white py-12 border-b border-neutral-border">
+        <section className="bg-gradient-to-b from-neutral-surface to-neutral-bg py-12 border-b border-neutral-border">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               href="/projects"
@@ -57,7 +57,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="text-sm bg-neutral-bg border border-neutral-border px-3 py-1 rounded-full text-neutral-text"
+                  className="text-sm bg-neutral-surface-2 border border-neutral-border px-3 py-1 rounded-full text-neutral-text"
                 >
                   {tech}
                 </span>
@@ -88,12 +88,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 {Object.entries(project.keyMetrics).map(([key, value]) => (
                   <div
                     key={key}
-                    className="bg-neutral-bg p-6 rounded-xl border border-neutral-border"
+                    className="bento-card"
                   >
                     <p className="text-neutral-muted text-sm font-semibold uppercase tracking-wider mb-2">
                       {key}
                     </p>
-                    <p className="font-serif text-3xl font-bold text-navy">
+                    <p className="font-serif text-3xl font-bold bg-gradient-to-br from-navy to-cyan-primary bg-clip-text text-transparent">
                       {value}
                     </p>
                   </div>
@@ -141,7 +141,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               </p>
               <a
                 href="#contact"
-                className="inline-block bg-gradient-to-r from-blue-primary to-cyan text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-primary/30 transition-all"
+                className="inline-block bg-gradient-to-r from-blue-primary to-cyan-primary text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-primary/30 transition-all"
               >
                 Get in Touch
               </a>

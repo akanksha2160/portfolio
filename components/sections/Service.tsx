@@ -6,7 +6,7 @@ import { Users } from 'lucide-react'
 
 export function Service() {
   return (
-    <section className="section bg-white">
+    <section className="section bg-neutral-bg">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,12 +26,12 @@ export function Service() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="timeline-item bg-neutral-bg p-8 rounded-xl border border-neutral-border hover:border-blue-primary transition-colors"
+                className="timeline-item bento-card p-8"
               >
                 <div className="flex items-start gap-4">
-                  <Users className="text-blue-primary mt-1 flex-shrink-0" size={24} />
+                  <Users className="text-cyan-primary mt-1 flex-shrink-0" size={24} />
                   <div className="flex-1">
-                    <h3 className="font-serif text-2xl font-bold text-navy mb-1">
+                    <h3 className="font-serif text-2xl font-bold text-navy mb-2">
                       {service.role}
                     </h3>
                     <p className="text-blue-primary font-semibold mb-2">

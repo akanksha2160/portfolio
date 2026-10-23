@@ -32,7 +32,7 @@ export default function ProjectsPage() {
               <Link
                 key={project.slug}
                 href={`/projects/${project.slug}`}
-                className="block bg-white p-8 rounded-xl border border-neutral-border hover:border-blue-primary hover:shadow-lg transition-all"
+                className="block bento-card p-8"
               >
                 <span className="text-xs font-semibold text-blue-primary uppercase tracking-wider mb-4 block">
                   {project.status}

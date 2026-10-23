@@ -25,16 +25,17 @@ export function ResearchInterests() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-xl border border-neutral-border hover:border-blue-primary hover:shadow-lg transition-all"
+                className="bento-card p-8"
               >
-                <div className="text-4xl mb-4">{category.icon}</div>
-                <h3 className="font-serif text-2xl font-bold text-navy mb-4">
+                <div className="text-5xl mb-5">{category.icon}</div>
+                <h3 className="font-serif text-2xl font-bold text-navy mb-5">
                   {category.category}
                 </h3>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {category.items.map((item) => (
-                    <li key={item} className="text-neutral-muted text-sm leading-relaxed">
-                      • {item}
+                    <li key={item} className="text-neutral-muted text-sm leading-relaxed flex gap-2">
+                      <span className="text-cyan-primary flex-shrink-0">·</span>
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>

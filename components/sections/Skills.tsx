@@ -5,7 +5,7 @@ import { SKILLS } from '@/lib/data'
 
 export function Skills() {
   return (
-    <section id="skills" className="section bg-white">
+    <section id="skills" className="section bg-neutral-bg">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,7 +25,7 @@ export function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-neutral-bg p-8 rounded-xl border border-neutral-border hover:border-blue-primary transition-colors"
+                className="bento-card p-8"
               >
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-3xl">{icon}</span>
@@ -37,7 +37,7 @@ export function Skills() {
                   {items.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1.5 bg-white border border-neutral-border rounded-full text-sm font-medium text-neutral-text hover:border-blue-primary hover:text-blue-primary transition-colors"
+                      className="px-3 py-1.5 bg-neutral-surface-2 border border-neutral-border rounded-lg text-sm font-medium text-neutral-text hover:border-cyan-primary hover:text-cyan-primary transition-colors"
                     >
                       {skill}
                     </span>

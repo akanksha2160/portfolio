@@ -1,150 +1,173 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, ChevronDown, GraduationCap } from 'lucide-react'
-import { PERSONAL_INFO } from '@/lib/data'
-import { CellTrackingBackground } from './CellTrackingBackground'
+import { Github, Linkedin, Mail, GraduationCap, ArrowRight, MapPin } from 'lucide-react'
+import { PERSONAL_INFO, BASE_PATH } from '@/lib/data'
+import Link from 'next/link'
+
+const STATS = [
+  { label: 'GPA', value: '4.24', sub: '/ 4.30' },
+  { label: 'Publications', value: '3', sub: 'incl. 1st-author' },
+  { label: 'Fellowships', value: '3', sub: 'TEEP · IIPP · +' },
+  { label: 'Best accuracy', value: '96%', sub: 'AUC 0.99' },
+]
+
+const FOCUS = ['Computational microscopy', 'Live-cell tracking', 'Interpretable AI', 'Image-based phenotyping', 'Weakly-supervised learning']
 
 export function Hero() {
-  const containerVariants = {
+  const container = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.18,
-        delayChildren: 0.3,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.2 } },
   }
-
-  const itemVariants = {
+  const item = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden py-20 md:py-0 bg-neutral-bg">
-      {/* Interactive cell-tracking animation */}
-      <CellTrackingBackground />
-
-      {/* Readability overlay - radial vignette keeps center text crisp */}
-      <div className="absolute inset-0 bg-gradient-radial pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at center, rgba(247,249,244,0.82) 0%, rgba(247,249,244,0.5) 45%, rgba(247,249,244,0.15) 100%)' }}
-      />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-neutral-bg py-20 md:py-0">
+      {/* Advanced animated background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-primary/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-green-primary/5 rounded-full blur-3xl" style={{animation: 'pulse 4s ease-in-out infinite 1s'}}></div>
+        <div className="absolute -top-1/2 -right-1/4 w-full h-full bg-gradient-to-bl from-cyan-primary/5 via-transparent to-transparent blur-2xl"></div>
+      </div>
 
       <motion.div
-        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
-        variants={containerVariants}
+        className="relative z-10 w-full"
+        variants={container}
         initial="hidden"
         animate="visible"
       >
-        {/* Research focus badge */}
-        <motion.div variants={itemVariants} className="mb-6 flex justify-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-md border border-cyan/40 text-sm font-medium text-navy shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-            Computational Imaging · Deep Learning for Biology
-          </span>
-        </motion.div>
-
-        {/* Profile Photo */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <div className="w-40 h-40 md:w-48 md:h-48 mx-auto relative group">
-            {/* Animated glow ring */}
-            <div className="absolute -inset-1 bg-gradient-to-tr from-blue-electric via-cyan-glow to-teal rounded-full blur-md opacity-70 animate-glow-pulse" />
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-electric via-cyan-glow to-teal rounded-full p-[3px]">
-              <div className="w-full h-full bg-white rounded-full p-1">
-                <div className="w-full h-full relative rounded-full overflow-hidden bg-neutral-bg">
-                  <img
-                    src="/photo.png"
-                    alt="Kumari Akanksha"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center text-6xl">👩‍🔬</div>'
-                    }}
-                  />
-                </div>
+        {/* BIG HERO PHOTO + INTRO */}
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
+          {/* Photo - Big and Impressive */}
+          <motion.div variants={item} className="relative order-2 md:order-1">
+            <div className="relative">
+              {/* Glowing border effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-primary via-green-primary to-cyan-primary rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+              <div className="relative w-full aspect-square rounded-3xl overflow-hidden border-2 border-cyan-primary/50 bg-gradient-to-br from-cyan-primary/20 to-green-primary/10">
+                <img
+                  src={`${BASE_PATH}/photo.png`}
+                  alt="Kumari Akanksha"
+                  className="w-full h-full object-cover"
+                  onError={(e) => { (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center text-9xl">👩‍🔬</div>' }}
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-neutral-bg/40 via-transparent to-cyan-primary/10"></div>
               </div>
             </div>
+          </motion.div>
+
+          {/* Intro + About Me */}
+          <motion.div variants={item} className="order-1 md:order-2 space-y-6">
+            <div>
+              <p className="text-cyan-primary text-xs font-bold uppercase tracking-widest mb-2 flex items-center gap-2">
+                <MapPin size={14} /> {PERSONAL_INFO.location}
+              </p>
+              <h1 className="text-5xl md:text-6xl font-bold text-neutral-text leading-tight mb-2">
+                {PERSONAL_INFO.name}
+              </h1>
+              <p className="text-xl md:text-2xl font-light text-neutral-muted">
+                Masters Student · Computational Imaging Researcher
+              </p>
+            </div>
+
+            {/* Lab Info */}
+            <div className="bg-gradient-to-r from-cyan-primary/10 to-green-primary/10 border border-cyan-primary/30 rounded-2xl p-6">
+              <p className="text-cyan-primary font-semibold mb-2 flex items-center gap-2">
+                <span className="w-2 h-2 bg-cyan-glow rounded-full animate-pulse"></span>
+                Integrated MechanoBioSystems Lab
+              </p>
+              <p className="text-neutral-muted text-sm leading-relaxed">
+                National Cheng Kung University (NCKU) · Tainan, Taiwan
+              </p>
+            </div>
+
+            {/* About Section */}
+            <div className="space-y-4">
+              <p className="text-neutral-text leading-relaxed">
+                I'm a Master's student in Biomedical Engineering at National Cheng Kung University, specializing in <span className="text-cyan-primary font-semibold">computational imaging</span> and <span className="text-green-primary font-semibold">deep learning</span> for biological systems.
+              </p>
+              <p className="text-neutral-muted text-sm leading-relaxed">
+                My research focuses on developing <strong>interpretable AI</strong> to transform microscopy images into actionable biological insights. I combine contrastive learning, temporal modeling, and saliency-based explainability to tackle challenges in live-cell tracking, quality assessment, and early phenotype prediction.
+              </p>
+              <p className="text-neutral-muted text-sm leading-relaxed">
+                Currently, I'm working on Siamese networks for 3D cell identity preservation and weakly-supervised frameworks for non-destructive biomedical QC. Passionate about precision medicine, regenerative biology, and AI that scientists can trust.
+              </p>
+            </div>
+
+            {/* Social + CTAs */}
+            <div className="flex flex-wrap items-center gap-3 pt-4">
+              <Link href="#projects" className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-primary to-blue-primary text-neutral-bg font-bold px-6 py-3 rounded-lg hover:shadow-lg hover:shadow-cyan-primary/40 hover:-translate-y-1 transition-all">
+                Explore Research <ArrowRight size={18} />
+              </Link>
+              <div className="flex gap-2">
+                {[
+                  { href: PERSONAL_INFO.github, Icon: Github, label: 'GitHub' },
+                  { href: PERSONAL_INFO.linkedin, Icon: Linkedin, label: 'LinkedIn' },
+                  { href: PERSONAL_INFO.googleScholar, Icon: GraduationCap, label: 'Google Scholar' },
+                  { href: `mailto:${PERSONAL_INFO.email}`, Icon: Mail, label: 'Email' },
+                ].map(({ href, Icon, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target={href.startsWith('http') ? '_blank' : undefined}
+                    rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    title={label}
+                    className="p-2.5 rounded-lg bg-neutral-surface border border-neutral-border/50 text-neutral-text hover:text-cyan-primary hover:border-cyan-primary hover:bg-neutral-surface-2 hover:shadow-lg hover:shadow-cyan-primary/20 hover:-translate-y-1 transition-all"
+                  >
+                    <Icon size={20} />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+        {/* KEY STATS + RESEARCH FOCUS SECTION */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+            {STATS.map((s) => (
+              <motion.div key={s.label} variants={item} className="bento-card flex flex-col justify-center">
+                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-primary to-green-primary bg-clip-text text-transparent mb-2">
+                  {s.value}
+                </p>
+                <p className="text-neutral-text text-sm font-semibold">{s.label}</p>
+                <p className="text-neutral-muted text-xs mt-1">{s.sub}</p>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
 
-        {/* Name */}
-        <motion.h1
-          variants={itemVariants}
-          className="font-serif text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-navy via-blue-primary to-cyan bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x leading-tight pb-2"
-        >
-          {PERSONAL_INFO.name}
-        </motion.h1>
+          {/* Research Focus */}
+          <motion.div variants={item} className="bento-card mb-8">
+            <p className="text-xs font-bold text-cyan-primary uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 bg-cyan-glow rounded-full"></span> Research Focus
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+              {FOCUS.map((f) => (
+                <span key={f} className="text-xs md:text-sm bg-gradient-to-br from-cyan-primary/10 to-green-primary/10 text-neutral-text border border-cyan-primary/30 px-3 py-2 rounded-lg hover:border-cyan-primary/60 transition-all cursor-default">
+                  {f}
+                </span>
+              ))}
+            </div>
+          </motion.div>
 
-        {/* Tagline */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <p className="text-xl md:text-3xl font-serif font-bold text-navy mb-3">
-            Building Interpretable AI for Biology
-          </p>
-          <p className="text-base md:text-xl text-neutral-muted font-light tracking-wide max-w-2xl mx-auto">
-            Turning microscopy images into biological discovery through deep learning
-          </p>
-        </motion.div>
+          {/* PhD + Contact CTA */}
+          <motion.div variants={item} className="bento-card bg-gradient-to-r from-cyan-primary/15 to-green-primary/10 border border-cyan-primary/40">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div>
+                <p className="text-neutral-text font-bold text-lg mb-1">PhD Applications • Fall 2026</p>
+                <p className="text-neutral-muted text-sm">Seeking top programs in biomedical imaging, computational biology, and interpretable AI. Open to research collaborations.</p>
+              </div>
+              <Link href="#contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-primary to-blue-primary text-neutral-bg font-bold px-6 py-3 rounded-lg hover:shadow-lg hover:shadow-cyan-primary/40 transition-all whitespace-nowrap">
+                Let's Connect <ArrowRight size={18} />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
 
-        {/* Short Bio */}
-        <motion.p
-          variants={itemVariants}
-          className="text-neutral-text text-center max-w-3xl mx-auto mb-10 text-base md:text-lg leading-relaxed"
-        >
-          I combine computational imaging, scientific machine learning, and interpretable AI to unlock patterns in
-          biological systems—from live-cell tracking to early-stage phenotype prediction, enabling faster discovery
-          in cell biology and regenerative medicine.
-        </motion.p>
-
-        {/* Social Links */}
-        <motion.div variants={itemVariants} className="flex justify-center gap-4 mb-10">
-          {[
-            { href: PERSONAL_INFO.github, Icon: Github, label: 'GitHub' },
-            { href: PERSONAL_INFO.linkedin, Icon: Linkedin, label: 'LinkedIn' },
-            { href: PERSONAL_INFO.googleScholar, Icon: GraduationCap, label: 'Google Scholar' },
-            { href: `mailto:${PERSONAL_INFO.email}`, Icon: Mail, label: 'Email' },
-          ].map(({ href, Icon, label }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith('http') ? '_blank' : undefined}
-              rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className="p-3 bg-white/80 backdrop-blur-md rounded-xl border border-neutral-border hover:border-cyan hover:bg-white hover:scale-110 hover:shadow-lg hover:shadow-cyan/20 transition-all duration-300 group"
-              title={label}
-            >
-              <Icon size={22} className="text-navy group-hover:text-blue-primary transition-colors" />
-            </a>
-          ))}
-        </motion.div>
-
-        {/* CTA Buttons */}
-        <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4">
-          <a
-            href="#projects"
-            className="inline-block bg-gradient-to-r from-blue-primary to-cyan text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-primary/30 hover:-translate-y-0.5 transition-all duration-300"
-          >
-            View Research
-          </a>
-          <a
-            href="#contact"
-            className="inline-block bg-white/80 backdrop-blur-md text-navy border border-neutral-border px-8 py-3 rounded-xl font-semibold hover:border-cyan hover:-translate-y-0.5 transition-all duration-300"
-          >
-            Get in Touch
-          </a>
-        </motion.div>
-      </motion.div>
-
-      {/* Scroll Down Indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <ChevronDown className="text-blue-primary" size={32} />
+        </div>
       </motion.div>
     </section>
   )

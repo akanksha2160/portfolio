@@ -6,7 +6,7 @@ export const PERSONAL_INFO = {
   email: 'kakankshatk.7@gmail.com',
   github: 'https://github.com/akanksha2160',
   linkedin: 'https://linkedin.com/in/akanksha2160',
-  googleScholar: '#',
+  googleScholar: 'https://scholar.google.com/citations?hl=en&user=yNmEP2kAAAAJ',
 }
 
 export const RESEARCH_INTERESTS = [
@@ -21,7 +21,6 @@ export const EDUCATION = [
     location: 'Tainan, Taiwan',
     degree: 'M.S. in Biomedical Engineering',
     gpa: '4.24/4.30',
-    status: 'top of cohort',
     startDate: 'Feb 2025',
     endDate: 'Expected Feb 2027',
   },
@@ -105,7 +104,7 @@ export const EXPERIENCE = [
 
 export const PUBLICATIONS = [
   {
-    authors: 'K. Akanksha et al.',
+    authors: 'K. Akanksha, Y.-F. Su, H.-W. Zhang, Y.-T. Liu, L. K. D. Bharali, C.-J. Yen, T.-Y. Tu',
     title: 'Deep Learning for Automated Quality Assessment of NK Cell Differentiation in iPSC Cultures',
     conference: 'IEEE CBMS 2026',
     status: 'accepted',
@@ -139,17 +138,17 @@ export const PROJECTS = [
   {
     slug: 'siamese-live-cell-tracking',
     title: 'Siamese Re-ID for Live-Cell Tracking in 3D Cancer Invasion',
-    shortDescription: 'Solving long-term cell identity tracking in dense 3D microscopy using contrastive learning—84.62% accuracy in challenging low-contrast conditions',
+    shortDescription: 'Solving long-term cell identity tracking in dense 3D microscopy using contrastive learning— 84.62% Dice in challenging low-contrast conditions',
     technologies: ['PyTorch', 'Siamese Networks', 'ConvLSTM', 'Attention U-Net', 'Contrastive Learning'],
     keyMetrics: {
       'Dice Score': '84.62%',
       'Dataset': '12 spheroids, ~1,118 frames',
-      'Innovation': 'Leader-follower dynamics discovery',
+      'Finding': 'Radial leader–follower dynamics',
     },
     overview: 'Live-cell tracking in 3D is hard: cells deform, overlap, and appear/disappear in z-stacks. I built a hybrid Siamese network combining contrastive learning (metric space), ConvLSTM (temporal reasoning), and Attention U-Net (segmentation) to preserve cell identity across dense time-lapse sequences. The result: reliable tracking in low-contrast confocal microscopy where traditional segmentation fails.',
-    methodology: 'Contrastive metric learning with Siamese architecture embeds cells into a discriminative space. ConvLSTM captures temporal dynamics across frames. Attention U-Net provides spatially-aware segmentation. Training uses hard negative mining and stratified sampling.',
-    dataset: '3D cancer spheroids embedded in Type-I collagen (invasion assay). 12 spheroid clusters, ~1,118 frames, 15-level z-stacks per timepoint. 1000+ cell trajectories manually annotated.',
-    results: 'Achieved 84.62% Dice score—8% above U-Net baseline, outperforms SAM in low-contrast. Quantitative invasion analysis uncovered radial leader-follower dynamics, challenging classical EMT assumptions. Enables new cell biology insights.',
+    methodology: 'Contrastive metric learning with Siamese architecture embeds cells into a discriminative space. ConvLSTM captures temporal dynamics across frames. Attention U-Net provides spatially-aware segmentation. Evaluated against U-Net and SAM baselines.',
+    dataset: '3D cancer spheroids embedded in Type-I collagen (invasion assay). 12 spheroid clusters, ~1,118 frames, 15-level z-stacks per timepoint.',
+    results: 'Achieved 84.62% Dice, outperforming U-Net and SAM baselines in low-contrast conditions. Quantitative invasion analysis revealed radial leader–follower dynamics and morphological dissociation from classical EMT assumptions.',
     status: 'In Progress - Manuscript in Preparation',
   },
   {
@@ -160,11 +159,11 @@ export const PROJECTS = [
     keyMetrics: {
       'Accuracy': '96.25%',
       'AUC': '0.99',
-      'Time Saved': 'Predict 10+ days early',
+      'Input': 'Day-10 bright-field images',
     },
     overview: 'In regenerative medicine, waiting weeks to assess organoid quality is costly. I designed a temporally-aware pipeline that predicts functional maturation from bright-field morphology alone—enabling early QC screening and massive cost savings.',
-    methodology: 'Multi-timepoint image features feed into ResNet-18. Temporal augmentation (frame shuffling, temporal dropout) teaches the model robust temporal patterns. Key insight: morphological signatures appear early; we just needed to learn to read them.',
-    dataset: 'Longitudinal bright-field imaging of iPSC-derived organoids. Day 10 snapshots predict functional differentiation assessed later. 200+ organoids, 5,000+ images.',
+    methodology: 'Domain-specific preprocessing (Otsu-based ROI, circular soft masking) feeds a ResNet-18, trained with class-weighted loss, Mixup and label smoothing under stratified group 5-fold cross-validation. Temporal augmentation and multi-timepoint feature integration build on the longitudinal pipeline from the TEEP internship.',
+    dataset: 'Bright-field embryoid body (EB) images from iPSC-derived NK-cell differentiation cultures. Day-10 images are used to predict later functional maturation.',
     results: 'ResNet-18 achieves 96.25% accuracy and AUC 0.99. t-SNE visualization confirms the model learns interpretable morphological clusters. First-author paper accepted at IEEE CBMS 2026.',
     status: 'Accepted - IEEE CBMS 2026',
   },
@@ -175,13 +174,13 @@ export const PROJECTS = [
     technologies: ['ResNet-18', 'Grad-CAM', 'Saliency Maps', 'Bright-field Microscopy'],
     keyMetrics: {
       'Accuracy': '86.5%',
-      'Expert Agreement': '90%+ match with biologist',
+      'Interpretability': 'Grad-CAM saliency maps',
       'Status': 'Under Review at Biofabrication',
     },
     overview: 'Quality control for cardiac spheroids is traditionally destructive (staining + analysis kills samples). I built an interpretable vision system that assesses quality from live images and explains its reasoning—biologists can trust it because they see why the model decided good vs. bad.',
-    methodology: 'ResNet-18 extracts morphological features from 8-bit bright-field images. Grad-CAM generates saliency maps showing which image regions drove the quality decision. The magic: saliency maps align with expert visual cues (boundary smoothness, internal homogeneity, etc.)',
-    dataset: '200+ 3D cardiac spheroids with expert quality annotations (A/B/C grades). Balanced dataset with stratified splitting to prevent overfitting.',
-    results: '86.5% accuracy with saliency maps matching expert visual reasoning in 90%+ of cases. Biofabrication reviewers appreciate the interpretability angle—shows causality, not correlation. Enables non-destructive phenotyping.',
+    methodology: 'ResNet-18 extracts morphological features from bright-field images. Grad-CAM generates saliency maps showing which image regions drove the quality decision; the maps highlight boundary and internal morphological patterns consistent with expert annotation.',
+    dataset: 'Bright-field images of 3D cardiac spheroids with expert quality annotations.',
+    results: '86.5% accuracy, with saliency maps consistent with expert annotation, giving mechanistic interpretability beyond classification and enabling non-destructive phenotyping.',
     status: 'Under Review - Biofabrication (submitted 2025)',
   },
 ]
@@ -266,4 +265,5 @@ export const INTERESTS = [
   'Music',
 ]
 
-export const CV_URL = '/cv.pdf'
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || ''
+export const CV_URL = `${BASE_PATH}/cv.pdf`

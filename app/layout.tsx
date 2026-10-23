@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kumari-akanksha.com'),
+  metadataBase: new URL('https://akanksha2160.github.io/portfolio'),
   title: 'Kumari Akanksha | Computational Imaging & Deep Learning for Biomedical Research',
   description: 'Master\'s student in Biomedical Engineering at NCKU. Research in computational microscopy, deep learning, and image-based phenotyping. PhD applicant to MIT, Stanford, CMU.',
   keywords: ['Computational Imaging', 'Deep Learning', 'Biomedical Engineering', 'Scientific Machine Learning', 'Biological Image Analysis'],
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://kumari-akanksha.com',
+    url: 'https://akanksha2160.github.io/portfolio',
     siteName: 'Kumari Akanksha Portfolio',
     title: 'Kumari Akanksha | Computational Imaging & Deep Learning',
     description: 'Master\'s student in Biomedical Engineering. Research in computational microscopy and deep learning for biological systems.',
@@ -37,13 +37,13 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://kumari-akanksha.com" />
+        <link rel="canonical" href="https://akanksha2160.github.io/portfolio" />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Person',
             name: 'Kumari Akanksha',
-            url: 'https://kumari-akanksha.com',
+            url: 'https://akanksha2160.github.io/portfolio',
             email: 'kakankshatk.7@gmail.com',
             jobTitle: 'Graduate Research Assistant',
             affiliation: {

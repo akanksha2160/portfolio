@@ -8,33 +8,41 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Forest Bio palette — semantic names kept stable; values are emerald/sage
-        navy: '#1B4332',          // deep emerald (headings, dark sections)
-        'navy-light': '#2D5A45',
-        blue: {
-          primary: '#2D6A4F',     // rich green (links, buttons, accents)
-          electric: '#40916C',
-          light: '#D8F3DC',       // light sage tint (badges, backgrounds)
-        },
+        // Advanced Dark Mode — Biomedical Research Aesthetic
+        navy: '#0A0E27',          // deep navy-black
+        'navy-light': '#1A1F3A',  // softer navy
         cyan: {
-          DEFAULT: '#52B788',     // sage accent
-          light: '#D8F3DC',
-          glow: '#74C69D',
+          primary: '#00D9FF',     // vibrant cyan (cell imaging)
+          light: '#1a3f47',       // dark cyan tint
+          glow: '#00F0FF',        // bright cyan glow
         },
-        teal: {
-          DEFAULT: '#40916C',
+        blue: {
+          primary: '#0099FF',     // electric blue
+          electric: '#00D9FF',    // bright electric cyan
+          light: '#1a3f47',       // dark blue-tint
+          dark: '#001a4d',        // deep dark blue
+        },
+        green: {
+          primary: '#00CC88',     // bio green (life/growth)
+          accent: '#00FF88',      // bright bio green
+          light: '#1a4d33',       // dark green tint
+        },
+        accent: {
+          purple: '#9D4EDD',      // research purple
+          pink: '#FF006E',        // data visualization pink
         },
         neutral: {
-          bg: '#F7F9F4',          // warm off-white
-          surface: '#FFFFFF',
-          text: '#1A1A1A',        // near-black
-          muted: '#5A7060',       // readable muted green
-          border: '#E3EAE1',      // green-tinted border
+          bg: '#050812',          // nearly black bg
+          surface: '#0F1629',     // card surface
+          'surface-2': '#141E2E', // raised tile
+          text: '#E0E8FF',        // cool off-white text
+          muted: '#8B95B3',       // muted cool gray
+          border: '#1a2441',      // subtle border
         },
       },
       fontFamily: {
-        serif: ['Playfair Display', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        serif: ['Georgia', 'Garamond', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       animation: {

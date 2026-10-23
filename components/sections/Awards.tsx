@@ -26,14 +26,14 @@ export function Awards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.08 }}
                 viewport={{ once: true }}
-                className="hover-lift bg-white p-6 rounded-xl border border-neutral-border flex items-start gap-4"
+                className="bento-card flex items-start gap-4"
               >
-                <Star className="text-blue-primary flex-shrink-0 mt-1" size={24} />
+                <Star className="text-cyan-primary flex-shrink-0 mt-1" size={24} />
                 <div className="flex-1">
                   <h3 className="font-semibold text-lg text-navy mb-1">
                     {award.title}
                   </h3>
-                  <p className="text-blue-primary text-sm font-medium mb-1">
+                  <p className="text-blue-primary text-sm font-medium mb-2">
                     {award.organization}
                   </p>
                   {award.year && (
@@ -41,7 +41,7 @@ export function Awards() {
                       {award.year}
                     </p>
                   )}
-                  <p className="text-neutral-muted text-sm">
+                  <p className="text-neutral-muted text-sm leading-relaxed">
                     {award.description}
                   </p>
                 </div>

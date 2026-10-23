@@ -6,7 +6,7 @@ import { GraduationCap } from 'lucide-react'
 
 export function Education() {
   return (
-    <section className="section bg-white">
+    <section className="section bg-neutral-bg">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,29 +26,24 @@ export function Education() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
                 viewport={{ once: true }}
-                className="timeline-item bg-neutral-bg p-8 rounded-xl border border-neutral-border hover:border-blue-primary transition-colors"
+                className="timeline-item bento-card p-8"
               >
                 <div className="flex items-start gap-4">
                   <GraduationCap className="text-blue-primary mt-1 flex-shrink-0" size={24} />
                   <div className="flex-1">
-                    <h3 className="font-serif text-2xl font-bold text-navy mb-1">
+                    <h3 className="font-serif text-2xl font-bold text-navy mb-2">
                       {edu.degree}
                     </h3>
                     <p className="text-blue-primary font-semibold mb-2">
                       {edu.school}
                     </p>
-                    <p className="text-neutral-muted text-sm mb-3">
+                    <p className="text-neutral-muted text-sm mb-4">
                       {edu.startDate} – {edu.endDate}
                     </p>
-                    <div className="flex flex-wrap gap-4 text-sm">
-                      <span className="bg-white px-3 py-1 rounded-full text-neutral-text font-medium">
+                    <div className="flex flex-wrap gap-3 text-sm">
+                      <span className="bg-neutral-surface-2 px-3 py-1.5 rounded-lg text-neutral-text font-medium border border-neutral-border">
                         GPA: {edu.gpa}
                       </span>
-                      {edu.status && (
-                        <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">
-                          {edu.status}
-                        </span>
-                      )}
                     </div>
                   </div>
                   <p className="text-neutral-muted text-sm whitespace-nowrap">{edu.location}</p>

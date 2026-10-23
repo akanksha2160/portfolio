@@ -40,27 +40,27 @@ export function Contact() {
               <div className="space-y-6">
                 <a
                   href={`mailto:${PERSONAL_INFO.email}`}
-                  className="flex items-start gap-4 p-4 bg-white rounded-lg border border-neutral-border hover:border-blue-primary hover:shadow-lg transition-all group"
+                  className="flex items-start gap-4 p-5 bg-neutral-surface rounded-lg border border-neutral-border hover:border-cyan-primary hover:shadow-sm transition-all group"
                 >
-                  <Mail className="text-blue-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" size={24} />
+                  <Mail className="text-blue-primary flex-shrink-0 mt-1 group-hover:text-cyan-primary group-hover:scale-110 transition-all" size={24} />
                   <div>
                     <p className="font-semibold text-navy mb-1">Email</p>
-                    <p className="text-blue-primary hover:underline">{PERSONAL_INFO.email}</p>
+                    <p className="text-blue-primary hover:text-cyan-primary hover:underline transition-colors">{PERSONAL_INFO.email}</p>
                   </div>
                 </a>
 
                 <a
                   href={`tel:${PERSONAL_INFO.phone}`}
-                  className="flex items-start gap-4 p-4 bg-white rounded-lg border border-neutral-border hover:border-blue-primary hover:shadow-lg transition-all group"
+                  className="flex items-start gap-4 p-5 bg-neutral-surface rounded-lg border border-neutral-border hover:border-cyan-primary hover:shadow-sm transition-all group"
                 >
-                  <Phone className="text-blue-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" size={24} />
+                  <Phone className="text-blue-primary flex-shrink-0 mt-1 group-hover:text-cyan-primary group-hover:scale-110 transition-all" size={24} />
                   <div>
                     <p className="font-semibold text-navy mb-1">Phone</p>
-                    <p className="text-blue-primary hover:underline">{PERSONAL_INFO.phone}</p>
+                    <p className="text-blue-primary hover:text-cyan-primary hover:underline transition-colors">{PERSONAL_INFO.phone}</p>
                   </div>
                 </a>
 
-                <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-neutral-border">
+                <div className="flex items-start gap-4 p-5 bg-neutral-surface rounded-lg border border-neutral-border">
                   <MapPin className="text-blue-primary flex-shrink-0 mt-1" size={24} />
                   <div>
                     <p className="font-semibold text-navy mb-1">Location</p>
@@ -92,7 +92,7 @@ export function Contact() {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-2 border border-neutral-border rounded-lg focus:outline-none focus:border-blue-primary focus:ring-1 focus:ring-blue-primary"
+                  className="w-full px-4 py-2.5 bg-neutral-surface text-neutral-text placeholder:text-neutral-muted border border-neutral-border rounded-lg focus:outline-none focus:border-cyan-primary focus:ring-1 focus:ring-cyan-primary/30 transition-colors"
                   placeholder="Your name"
                 />
               </div>
@@ -106,7 +106,7 @@ export function Contact() {
                   id="subject"
                   name="subject"
                   required
-                  className="w-full px-4 py-2 border border-neutral-border rounded-lg focus:outline-none focus:border-blue-primary focus:ring-1 focus:ring-blue-primary"
+                  className="w-full px-4 py-2.5 bg-neutral-surface text-neutral-text placeholder:text-neutral-muted border border-neutral-border rounded-lg focus:outline-none focus:border-cyan-primary focus:ring-1 focus:ring-cyan-primary/30 transition-colors"
                   placeholder="What is this about?"
                 />
               </div>
@@ -119,15 +119,15 @@ export function Contact() {
                   id="message"
                   name="message"
                   required
-                  rows={4}
-                  className="w-full px-4 py-2 border border-neutral-border rounded-lg focus:outline-none focus:border-blue-primary focus:ring-1 focus:ring-blue-primary"
+                  rows={5}
+                  className="w-full px-4 py-2.5 bg-neutral-surface text-neutral-text placeholder:text-neutral-muted border border-neutral-border rounded-lg focus:outline-none focus:border-cyan-primary focus:ring-1 focus:ring-cyan-primary/30 transition-colors"
                   placeholder="Your message..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-primary to-cyan text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-primary/30 transition-all duration-300"
+                className="w-full bg-blue-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-dark hover:shadow-md shadow-sm transition-all duration-300"
               >
                 Send Message
               </button>

@@ -32,14 +32,14 @@ export function Experience() {
               >
                 <button
                   onClick={() => setExpandedIndex(expandedIndex === jobIdx ? -1 : jobIdx)}
-                  className="w-full text-left bg-white border border-neutral-border rounded-xl p-6 hover:border-blue-primary hover:shadow-lg transition-all"
+                  className="w-full text-left bg-neutral-surface border border-neutral-border rounded-xl p-6 hover:border-cyan-primary/40 hover:shadow-sm transition-all"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
-                      <h3 className="font-serif text-2xl font-bold text-navy mb-1">
+                      <h3 className="font-serif text-2xl font-bold text-navy mb-2">
                         {job.title}
                       </h3>
-                      <p className="text-blue-primary font-semibold mb-1">
+                      <p className="text-blue-primary font-semibold mb-1.5">
                         {job.organization}
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-neutral-muted">
@@ -49,7 +49,7 @@ export function Experience() {
                         {job.advisor && (
                           <>
                             <span>•</span>
-                            <span>{job.advisor}</span>
+                            <span className="text-neutral-text">{job.advisor}</span>
                           </>
                         )}
                       </div>
@@ -68,14 +68,14 @@ export function Experience() {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="bg-neutral-bg border border-t-0 border-neutral-border rounded-b-xl p-6 space-y-4"
+                    className="bg-neutral-surface-2 border border-t-0 border-neutral-border rounded-b-xl p-6 space-y-5 overflow-hidden"
                   >
                     {job.bullets.map((bullet, bulletIdx) => (
-                      <div key={bulletIdx} className="mb-4">
+                      <div key={bulletIdx}>
                         <h4 className="font-semibold text-navy mb-2">
                           {bullet.title}
                         </h4>
-                        <p className="text-neutral-muted text-sm leading-relaxed mb-2">
+                        <p className="text-neutral-muted text-sm leading-relaxed mb-3">
                           {bullet.description}
                         </p>
                         {bullet.metrics.length > 0 && (
@@ -83,7 +83,7 @@ export function Experience() {
                             {bullet.metrics.map((metric) => (
                               <span
                                 key={metric}
-                                className="text-xs bg-white px-2 py-1 rounded border border-blue-light text-blue-primary font-medium"
+                                className="text-xs bg-cyan-primary/10 text-cyan-primary px-2.5 py-1 rounded border border-cyan-primary/20 font-medium"
                               >
                                 {metric}
                               </span>

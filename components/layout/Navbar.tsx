@@ -19,11 +19,11 @@ export function Navbar() {
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-50 bg-neutral-bg/80 backdrop-blur-xl border-b border-neutral-border/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="font-serif text-xl font-bold bg-gradient-to-r from-navy to-blue-primary bg-clip-text text-transparent hover:from-blue-primary hover:to-cyan transition-all">
+          <Link href="/" className="font-bold text-lg text-neutral-text hover:text-cyan-primary transition-colors">
             Kumari Akanksha
           </Link>
 
@@ -33,7 +33,7 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-neutral-text hover:text-blue-primary font-medium text-sm transition-colors"
+                className="text-neutral-muted hover:text-cyan-primary font-medium text-sm transition-colors border-b-2 border-transparent hover:border-cyan-primary/50"
               >
                 {link.label}
               </a>
@@ -45,7 +45,7 @@ export function Navbar() {
             <a
               href={CV_URL}
               download
-              className="flex items-center gap-2 bg-gradient-to-r from-blue-primary to-cyan text-white px-4 py-2 rounded-lg hover:shadow-lg hover:shadow-blue-primary/30 font-medium transition-all"
+              className="flex items-center gap-2 bg-gradient-to-r from-cyan-primary to-blue-primary text-neutral-bg px-4 py-2 rounded-lg hover:shadow-lg hover:shadow-cyan-primary/40 hover:-translate-y-0.5 font-bold transition-all"
             >
               <Download size={16} />
               CV
@@ -55,7 +55,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-navy hover:text-blue-primary"
+            className="md:hidden text-neutral-text hover:text-cyan-primary transition-colors"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

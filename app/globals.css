@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,7 +9,11 @@ html {
 }
 
 body {
-  @apply bg-neutral-bg text-neutral-text;
+  @apply bg-neutral-bg text-neutral-text font-sans;
+  font-feature-settings: "liga" 1, "calt" 1;
+  background: radial-gradient(ellipse at 20% 50%, rgba(0, 217, 255, 0.05) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 80%, rgba(0, 204, 136, 0.03) 0%, transparent 50%),
+              #050812;
 }
 
 /* Custom scrollbar */
@@ -22,11 +26,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-navy rounded-full;
+  @apply bg-cyan-primary rounded-full opacity-30;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-navy-light;
+  @apply bg-cyan-glow opacity-60;
 }
 
 /* Section padding */
@@ -51,12 +55,12 @@ button, a {
 
 /* Text gradient */
 .gradient-text {
-  @apply bg-gradient-to-r from-navy via-blue-primary to-cyan bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-cyan-primary via-blue-primary to-green-primary bg-clip-text text-transparent;
 }
 
 /* Code block styling */
 code {
-  @apply font-mono text-sm bg-neutral-bg px-2 py-1 rounded;
+  @apply font-mono text-sm bg-neutral-surface text-blue-electric px-2 py-1 rounded;
 }
 
 /* Badge styles */
@@ -65,20 +69,51 @@ code {
 }
 
 .badge-success {
-  @apply bg-green-100 text-green-800;
+  @apply bg-emerald-50 text-emerald-700 border border-emerald-200;
 }
 
 .badge-warning {
-  @apply bg-yellow-100 text-yellow-800;
+  @apply bg-amber-50 text-amber-700 border border-amber-200;
 }
 
 .badge-info {
-  @apply bg-blue-light text-blue-primary;
+  @apply bg-blue-light text-blue-primary border border-blue-primary/20;
+}
+
+/* ---- Bento dashboard utilities ---- */
+.bento-grid {
+  @apply grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[minmax(0,auto)];
+}
+
+.bento-card {
+  @apply relative rounded-2xl border border-neutral-border bg-neutral-surface p-6 overflow-hidden transition-all duration-500;
+  background: linear-gradient(135deg, rgba(15, 22, 41, 0.8), rgba(20, 30, 46, 0.6));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 217, 255, 0.08), inset 0 1px 0 rgba(0, 217, 255, 0.2);
+}
+
+.bento-card:hover {
+  @apply border-cyan-primary/50 -translate-y-1;
+  box-shadow: 0 20px 60px rgba(0, 217, 255, 0.25), inset 0 1px 0 rgba(0, 217, 255, 0.3);
+  background: linear-gradient(135deg, rgba(15, 22, 41, 1), rgba(20, 30, 46, 0.8));
+}
+
+/* glowing top accent line */
+.bento-card::before {
+  content: '';
+  @apply absolute inset-x-0 top-0 h-px;
+  background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.6), transparent);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+}
+
+/* glass tile (for over-animation areas) */
+.glass-dark {
+  @apply bg-neutral-surface/60 backdrop-blur-xl border border-neutral-border;
 }
 
 /* Link styles */
 a {
-  @apply text-blue-primary hover:text-navy transition-colors;
+  @apply text-cyan-primary hover:text-cyan-glow transition-colors;
 }
 
 /* Section headers */
@@ -86,14 +121,16 @@ a {
   @apply relative pb-8 mb-2;
 }
 
-/* Animated gradient accent bar under section headings */
+/* Glowing accent line under section headings */
 .section-header::after {
   content: '';
-  @apply absolute bottom-0 left-0 h-1 w-20 rounded-full bg-gradient-to-r from-blue-primary to-cyan;
+  @apply absolute bottom-0 left-0 h-1 w-32 rounded-full bg-gradient-to-r from-cyan-primary to-green-primary;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
 }
 
 .section-header h2 {
-  @apply font-serif text-4xl md:text-5xl font-bold text-navy;
+  @apply text-4xl md:text-5xl font-bold text-neutral-text;
+  letter-spacing: -0.02em;
 }
 
 /* Card glow on hover */
@@ -102,7 +139,7 @@ a {
 }
 
 .card-glow:hover {
-  @apply shadow-lg shadow-cyan/10 border-cyan -translate-y-1;
+  @apply shadow-md shadow-cyan-primary/10 border-cyan-primary -translate-y-1;
 }
 
 /* Timeline */
